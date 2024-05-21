@@ -1,0 +1,11 @@
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\bin\Debug\net8.0\Tournament.Core.deps.json
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\bin\Debug\net8.0\Tournament.Core.dll
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\bin\Debug\net8.0\Tournament.Core.pdb
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\Tournament.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\Tournament.Core.AssemblyInfoInputs.cache
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\Tournament.Core.AssemblyInfo.cs
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\Tournament.Core.csproj.CoreCompileInputs.cache
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\Tournament.Core.dll
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\refint\Tournament.Core.dll
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\Tournament.Core.pdb
+C:\Users\MDAlw\source\repos\Testing\Tournament.Core\obj\Debug\net8.0\ref\Tournament.Core.dll
