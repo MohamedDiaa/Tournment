@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tournament.Core
 {
-    internal class Tournament
+    public class Tournament
     {
 
         public int Id { get; set; }
@@ -18,6 +18,6 @@ namespace Tournament.Core
 
         public ICollection<Game> Games { get; set; }
 
-    
+     
     }
 }
