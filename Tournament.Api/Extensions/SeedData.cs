@@ -14,7 +14,6 @@ namespace Tournament.Api.Extensions
             if (await context.Tournaments.AnyAsync()) return;
 
             faker = new Faker("sv");
-
             var g = new Game
             {
 

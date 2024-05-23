@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Tournament.Core;
 using Tournament.Data;
 
 namespace Tournament.Api.Controllers
 {
-    public class TournamentsController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TournamentsController : ControllerBase
     {
         private readonly TournmentDbContext _context;
 
@@ -19,134 +21,83 @@ namespace Tournament.Api.Controllers
             _context = context;
         }
 
-        // GET: Tournaments
-        public async Task<IActionResult> Index()
+        // GET: api/Tournaments
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Tournament.Core.Tournament>>> GetTournaments()
         {
-            return View(await _context.Tournaments.ToListAsync());
+            return await _context.Tournaments.ToListAsync();
         }
 
-        // GET: Tournaments/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: api/Tournaments/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Tournament.Core.Tournament>> GetTournament(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var tournament = await _context.Tournaments
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (tournament == null)
-            {
-                return NotFound();
-            }
-
-            return View(tournament);
-        }
-
-        // GET: Tournaments/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Tournaments/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,StartTime")] Tournament.Core.Tournament tournament)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(tournament);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(tournament);
-        }
-
-        // GET: Tournaments/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var tournament = await _context.Tournaments.FindAsync(id);
+
             if (tournament == null)
             {
                 return NotFound();
             }
-            return View(tournament);
+
+            return tournament;
         }
 
-        // POST: Tournaments/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,StartTime")] Tournament.Core.Tournament tournament)
+        // PUT: api/Tournaments/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutTournament(int id, Tournament.Core.Tournament tournament)
         {
             if (id != tournament.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            if (ModelState.IsValid)
+            _context.Entry(tournament).State = EntityState.Modified;
+
+            try
             {
-                try
-                {
-                    _context.Update(tournament);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TournamentExists(tournament.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
             }
-            return View(tournament);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TournamentExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
-        // GET: Tournaments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // POST: api/Tournaments
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Tournament.Core.Tournament>> PostTournament(Tournament.Core.Tournament tournament)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            _context.Tournaments.Add(tournament);
+            await _context.SaveChangesAsync();
 
-            var tournament = await _context.Tournaments
-                .FirstOrDefaultAsync(m => m.Id == id);
+            return CreatedAtAction("GetTournament", new { id = tournament.Id }, tournament);
+        }
+
+        // DELETE: api/Tournaments/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTournament(int id)
+        {
+            var tournament = await _context.Tournaments.FindAsync(id);
             if (tournament == null)
             {
                 return NotFound();
             }
 
-            return View(tournament);
-        }
-
-        // POST: Tournaments/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var tournament = await _context.Tournaments.FindAsync(id);
-            if (tournament != null)
-            {
-                _context.Tournaments.Remove(tournament);
-            }
-
+            _context.Tournaments.Remove(tournament);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return NoContent();
         }
 
         private bool TournamentExists(int id)
