@@ -11,7 +11,10 @@ namespace Tournament.Data
     {
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Tournament.Core.Tournament> builder)
         {
-            throw new NotImplementedException();
+            builder.HasMany(T => T.Games)
+                .WithOne(g => g.Tournament)
+                .HasForeignKey(g => g.TournamentId);
+                
         }
     }
 }

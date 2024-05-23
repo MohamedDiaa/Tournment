@@ -13,7 +13,8 @@ namespace Tournament.Core
 
         public DateTime Time { get; set; }
         
-        public int TournamentIdD { get; set; }
+        public int TournamentId { get; set; }
     
+        public Tournament Tournament { get; set; }
     }
 }

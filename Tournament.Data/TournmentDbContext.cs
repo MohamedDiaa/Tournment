@@ -11,8 +11,9 @@ using System.Reflection.Emit;
 
 namespace Tournament.Data
 {
-    internal class TournmentDbContext : DbContext
+    public class TournmentDbContext : DbContext
     {
+        public DbSet<Tournament.Core.Tournament> Tournaments { get; set; } = default!;
         public TournmentDbContext(DbContextOptions options) : base(options)
         {
         }
@@ -20,6 +21,8 @@ namespace Tournament.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new TournmentConfiguration());
         }
     }
 }

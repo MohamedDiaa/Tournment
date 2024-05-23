@@ -1,4 +1,8 @@
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Microsoft.EntityFrameworkCore;
+using Tournament.Data;
+using Tournament.Core;
+
 namespace Tournament.Api
 {
     public class Program
@@ -18,8 +22,9 @@ namespace Tournament.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<TournmentDbContext>(options =>
+             options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
-            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
