@@ -338,3 +338,4 @@ C:\Users\MDAlw\source\repos\Tournment\Tournament.Api\obj\Debug\net8.0\Tournament
 C:\Users\MDAlw\source\repos\Tournment\Tournament.Api\obj\Debug\net8.0\ref\Tournament.Api.dll
 C:\Users\MDAlw\source\repos\Tournment\Tournament.Api\obj\Debug\net8.0\Tournament.Api.RazorAssemblyInfo.cache
 C:\Users\MDAlw\source\repos\Tournment\Tournament.Api\obj\Debug\net8.0\Tournament.Api.RazorAssemblyInfo.cs
+C:\Users\MDAlw\source\repos\Tournment\Tournament.Api\bin\Debug\net8.0\Bogus.dll

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.EntityFrameworkCore;
 using Tournament.Data;
 using Tournament.Core;
+using Tournament.Api.Extensions;
 
 namespace Tournament.Api
 {
@@ -26,9 +27,11 @@ namespace Tournament.Api
             builder.Services.AddDbContext<TournmentDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("TournmentDbContext") ?? throw new InvalidOperationException("Connection string 'GarageMVCContext' not found.")));
 
-
+        
 
             var app = builder.Build();
+
+             app.SeedDataAsync();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "WTPs0qfDi7nr59z8pb7eq1n6QpHP4pllD/l3dwCPeBx3QWF8wkDH3CtNMPSCrLb7AHXAMGiT6pmcjv4h3DQP0Q==",
+  "dgSpecHash": "vtRhMlR0AjzaVi/c3XS2iB0ZJoXT4Hp7IlQ2T0d5M7V/5fSqtXrOofPAtiLaICrUBX4FYsTX4SDpfVydXGyfag==",
   "success": true,
   "projectFilePath": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\Tournament.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MDAlw\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\MDAlw\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\MDAlw\\.nuget\\packages\\bogus\\35.5.1\\bogus.35.5.1.nupkg.sha512",
     "C:\\Users\\MDAlw\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\MDAlw\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\MDAlw\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
