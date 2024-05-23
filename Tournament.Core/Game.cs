@@ -15,6 +15,6 @@ namespace Tournament.Core
         
         public int TournamentId { get; set; }
     
-        public Tournament Tournament { get; set; }
+        public Tournament? Tournament { get; set; }
     }
 }
