@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Tournament.Data\Tournament.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

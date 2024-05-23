@@ -22,8 +22,11 @@ namespace Tournament.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+          
             builder.Services.AddDbContext<TournmentDbContext>(options =>
-             options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("TournmentDbContext") ?? throw new InvalidOperationException("Connection string 'GarageMVCContext' not found.")));
+
+
 
             var app = builder.Build();
 

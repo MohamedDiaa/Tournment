@@ -3,6 +3,17 @@
   "WorkspaceRootPath": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EA246D41-816C-4C4E-A5C8-43C7AC85DFD5}|Tournament.Api.csproj|c:\\users\\mdalw\\source\\repos\\tournment\\tournament.api\\controllers\\tournamentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA246D41-816C-4C4E-A5C8-43C7AC85DFD5}|Tournament.Api.csproj|solutionrelative:controllers\\tournamentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{739E179F-C08E-413F-9D47-4B7C2F5CED23}|..\\Tournament.Data\\Tournament.Data.csproj|c:\\users\\mdalw\\source\\repos\\tournment\\tournament.data\\tournamentdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA246D41-816C-4C4E-A5C8-43C7AC85DFD5}|Tournament.Api.csproj|c:\\users\\mdalw\\source\\repos\\tournment\\tournament.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EA246D41-816C-4C4E-A5C8-43C7AC85DFD5}|Tournament.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EA246D41-816C-4C4E-A5C8-43C7AC85DFD5}|Tournament.Api.csproj|c:\\users\\mdalw\\source\\repos\\tournment\\tournament.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA246D41-816C-4C4E-A5C8-43C7AC85DFD5}|Tournament.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -32,19 +43,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TournamentsController.cs",
+              "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\Controllers\\TournamentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TournamentsController.cs",
+              "ToolTip": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\Controllers\\TournamentsController.cs",
+              "RelativeToolTip": "Controllers\\TournamentsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T22:27:48.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TournamentDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Data\\TournamentDbContextFactory.cs",
+              "RelativeDocumentMoniker": "..\\Tournament.Data\\TournamentDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Data\\TournamentDbContextFactory.cs",
+              "RelativeToolTip": "..\\Tournament.Data\\TournamentDbContextFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T22:24:11.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-23T19:18:36.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAwwAoAAAAJAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAIwBsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T11:02:50.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Core\\Game.cs",
               "RelativeDocumentMoniker": "..\\Tournament.Core\\Game.cs",
@@ -56,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "TournmentConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Data\\TournmentConfiguration.cs",
               "RelativeDocumentMoniker": "..\\Tournament.Data\\TournmentConfiguration.cs",
@@ -68,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "TournmentDbContext.cs",
               "DocumentMoniker": "C:\\Users\\MDAlw\\source\\repos\\Tournment\\Tournament.Data\\TournmentDbContext.cs",
               "RelativeDocumentMoniker": "..\\Tournament.Data\\TournmentDbContext.cs",
