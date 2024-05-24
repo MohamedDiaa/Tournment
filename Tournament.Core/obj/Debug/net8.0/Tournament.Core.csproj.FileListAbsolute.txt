@@ -21,3 +21,4 @@ C:\Users\MDAlw\source\repos\Tournment\Tournament.Core\obj\Debug\net8.0\Tournamen
 C:\Users\MDAlw\source\repos\Tournment\Tournament.Core\obj\Debug\net8.0\refint\Tournament.Core.dll
 C:\Users\MDAlw\source\repos\Tournment\Tournament.Core\obj\Debug\net8.0\Tournament.Core.pdb
 C:\Users\MDAlw\source\repos\Tournment\Tournament.Core\obj\Debug\net8.0\ref\Tournament.Core.dll
+C:\Users\MDAlw\source\repos\Tournment\Tournament.Core\obj\Debug\net8.0\Tournament.Core.csproj.AssemblyReference.cache

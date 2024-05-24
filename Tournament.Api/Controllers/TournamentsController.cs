@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Tournament.Core;
+using Tournament.Core.Repositories;
 using Tournament.Data;
 
 namespace Tournament.Api.Controllers
@@ -14,25 +15,28 @@ namespace Tournament.Api.Controllers
     [ApiController]
     public class TournamentsController : ControllerBase
     {
-        private readonly TournmentDbContext _context;
+        private readonly IUnitofWork _uow;
 
-        public TournamentsController(TournmentDbContext context)
+        public TournamentsController(IUnitofWork uow)
         {
-            _context = context;
+            _uow = uow;
         }
 
         // GET: api/Tournaments
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tournament.Core.Tournament>>> GetTournaments()
         {
-            return await _context.Tournaments.ToListAsync();
+
+             var list = await _uow.TournamentRepository.GetAllAsync();
+            return new OkObjectResult(list);
         }
 
         // GET: api/Tournaments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Tournament.Core.Tournament>> GetTournament(int id)
         {
-            var tournament = await _context.Tournaments.FindAsync(id);
+             
+            var tournament = await _uow.TournamentRepository.GetAsync(id);
 
             if (tournament == null)
             {
@@ -52,11 +56,11 @@ namespace Tournament.Api.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(tournament).State = EntityState.Modified;
+            _uow.TournamentRepository.Update(tournament);
 
             try
             {
-                await _context.SaveChangesAsync();
+                _uow.CompleteAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -78,9 +82,8 @@ namespace Tournament.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Tournament.Core.Tournament>> PostTournament(Tournament.Core.Tournament tournament)
         {
-            _context.Tournaments.Add(tournament);
-            await _context.SaveChangesAsync();
-
+            _uow.TournamentRepository.Add(tournament);
+            await _uow.CompleteAsync();
             return CreatedAtAction("GetTournament", new { id = tournament.Id }, tournament);
         }
 
@@ -88,21 +91,20 @@ namespace Tournament.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTournament(int id)
         {
-            var tournament = await _context.Tournaments.FindAsync(id);
+            var tournament = await _uow.TournamentRepository.GetAsync(id);
             if (tournament == null)
             {
                 return NotFound();
             }
-
-            _context.Tournaments.Remove(tournament);
-            await _context.SaveChangesAsync();
-
+            _uow.TournamentRepository.Remove(tournament);
+            await _uow.CompleteAsync();
+            
             return NoContent();
         }
 
         private bool TournamentExists(int id)
         {
-            return _context.Tournaments.Any(e => e.Id == id);
+            return _uow.TournamentRepository.AnyAsync(id).Result;
         }
     }
 }

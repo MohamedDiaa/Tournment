@@ -1,46 +1,51 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tournament.Core.Repositories;
 
-
 namespace Tournament.Data.Repositories
 {
     public class TournamentRepository : ITournamentRepository
     {
-
-        public TournamentRepository(TournmentDbContext context) { }
+        private readonly TournmentDbContext _context;
+        public TournamentRepository(TournmentDbContext context) {
+        
+            _context = context;
+        }
 
         public void Add(Core.Tournament tournament)
         {
-            throw new NotImplementedException();
+            _context.Tournaments.Add(tournament);
         }
 
-        public Task<bool> AnyAsync(int id)
+        public async Task<bool> AnyAsync(int id)
         {
-            throw new NotImplementedException();
+            return _context.Tournaments.Any(e => e.Id == id);
         }
 
-        public Task<IEnumerable<Core.Tournament>> GetAllAsync()
+        public async Task<IEnumerable<Core.Tournament>> GetAllAsync()
         {
-            throw new NotImplementedException();
+
+            return await _context.Tournaments.ToListAsync();
         }
 
-        public Task<Core.Tournament> GetAsync(int id)
+        public async Task<Core.Tournament> GetAsync(int id)
         {
-            throw new NotImplementedException();
+          return await _context.Tournaments.FindAsync(id);
         }
 
-        public void Remove(Core.Tournament tournament)
+        public async void Remove(Core.Tournament tournament)
         {
-            throw new NotImplementedException();
+         
+            _context.Tournaments.Remove(tournament);
         }
 
-        public void Update(Core.Tournament tournament)
+        public async void Update(Core.Tournament tournament)
         {
-            throw new NotImplementedException();
+            _context.Entry(tournament).State = EntityState.Modified;
         }
     }
 }
