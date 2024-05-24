@@ -14,6 +14,8 @@ namespace Tournament.Data
     public class TournmentDbContext : DbContext
     {
         public DbSet<Tournament.Core.Tournament> Tournaments { get; set; } = default!;
+
+        public DbSet<Tournament.Core.Game> Games { get; set; } = default!;
         public TournmentDbContext(DbContextOptions options) : base(options)
         {
         }

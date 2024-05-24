@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Tournament.Data;
 using Tournament.Core;
 using Tournament.Api.Extensions;
+using Tournament.Core.Repositories;
+using Tournament.Data.Repositories;
 
 namespace Tournament.Api
 {
@@ -27,7 +29,7 @@ namespace Tournament.Api
             builder.Services.AddDbContext<TournmentDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("TournmentDbContext") ?? throw new InvalidOperationException("Connection string 'GarageMVCContext' not found.")));
 
-        
+            builder.Services.AddScoped<IUnitofWork, UnitofWork>();
 
             var app = builder.Build();
 
